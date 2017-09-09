@@ -11,9 +11,8 @@
 int
 ssl_parse(char * ibuf, size_t len, struct ssl_parse * ret)
 {
-	int major_version, minor_version;
 	char * data = NULL;
-	size_t msg_type, msg_len, total_read = 0, record_type;
+	size_t msg_len, total_read = 0, record_type;
 	size_t data_len = 0;
 	unsigned char * buf;
 
@@ -21,13 +20,9 @@ ssl_parse(char * ibuf, size_t len, struct ssl_parse * ret)
 
 	buf = (unsigned char *)(ibuf);
 	if (buf[0] & 0x80) {
-		msg_type = buf[2];
 		msg_len = ((buf[0] & 0x7f) << 8) | buf[1];
 		if (buf[2] != 1 || buf[3] != 3)
 			return -1;
-
-		major_version = buf[3];
-		minor_version = buf[4];
 
 		total_read = msg_len + 2;	
 		record_type = SSL_MSG_HANDSHAKE;
@@ -44,7 +39,6 @@ ssl_parse(char * ibuf, size_t len, struct ssl_parse * ret)
 		if (len < msg_len) {
 			return -1;
 		}
-		msg_type = buf[0];
 		total_read = msg_len + 5;
 	}
 	else return -1;

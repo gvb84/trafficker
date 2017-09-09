@@ -138,12 +138,9 @@ void
 privdrop(const char * username)
 {
 	uid_t uid;
-	gid_t gid, saved_egid, saved_rgid;
+	gid_t gid;
 	struct passwd * pwd;
 	int ret;
-
-	saved_egid = getegid();
-	saved_rgid = getgid();
 
 	pwd = getpwnam(username);
 	if (!pwd) fatal("getpwnam failed so cannot privdrop");
