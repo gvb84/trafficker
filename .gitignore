@@ -1,0 +1,10 @@
+*.o
+test/
+gmaps-profile
+gmaps-trafficker
+.*.swp
+*.dat
+*.a
+core
+a.out
+vcore.*
