@@ -1,16 +1,16 @@
-Just type 'make' to build the software.
+Just type 'make' to build the software. You need libnids-dev and libpcap-dev to
+be installed.
 
-Then run ./gmaps-profile with the appropriate arguments (see -h for help). 
-It will build up a profile based on the GMapCatcher directory.
+Then run ./gmaps-profile with the appropriate arguments (see -h for help).  It
+will build up a profile based on the GMapCatcher directory.
 
 Then run ./gmaps-trafficker with the appropriate arguments (see -h for help).
 That should be it.
 
 No guarantees. It's a shoddy proof of concept and it might or might not work at
-all depending on your setup, network connection, browser being used or tons
-of other different factors.
+all depending on your setup, network connection, browser being used or tons of
+other different factors.
 
-More information is in the whitepaper in the doc/ directory.
-Have fun!
+More information is in the whitepaper in the doc/ directory.  Have fun!
 
 For more information just contact me at: gvb@santarago.org
