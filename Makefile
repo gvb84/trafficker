@@ -1,6 +1,6 @@
 MFLAGS=-lm
 CFLAGS=-Wall -Werror -ggdb -I. -Ilibtrafficker/
-NIDSFLAGS=-lnids
+NIDSFLAGS=-lpcap -lnids
 TARGETS=gmaps-profile gmaps-trafficker
 
 all: libtrafficker/libtrafficker.a $(TARGETS)
